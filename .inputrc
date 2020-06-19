@@ -1,0 +1,17 @@
+# want vi to be the default editor for readline
+set editing-mode vi
+
+# vi settings
+$if mode=vi
+    # normal mode
+    set keymap vi-command
+    "G": end-of-history
+    # insert mode
+    set keymap vi-insert
+    "jk": vi-movement-mode
+$endif
+
+set show-mode-in-prompt on
+set vi-ins-mode-string "\1\e[5 q\2"
+set vi-cmd-mode-string "\1\e[2 q\2"
+
